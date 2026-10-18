@@ -43,7 +43,7 @@ export const GameInfo = ({game}) => {
           {games.map((game) => (
             <Link to={`/product/${game.id}`}>
               {game.rate>4.7 && <span className="flex gap-2">
-              <img src={game.coverImage} className="w-[100px]" alt="" />
+              <img src={game.coverImage} className="w-25" alt="" />
               <div>
                 <p className="text-white">{game.title}</p>
                 <p className="text-white">${game.price}</p>

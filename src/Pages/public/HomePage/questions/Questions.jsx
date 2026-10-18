@@ -1,6 +1,6 @@
 export const Questions = () => {
   return (
-    <section className="questions bg-[#080325]">
+    <section className="questions bg-[#100A35]">
       <div className="questionsContent flex flex-col justify-center items-center p-8">
         <h2 className="title text-white text-[20px] md:text-[42px] font-light">
           Have Any Questions?

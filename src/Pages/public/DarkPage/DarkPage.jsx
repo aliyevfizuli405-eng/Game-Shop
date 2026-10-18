@@ -15,7 +15,7 @@ import "./DarkPage.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { CreditCard, Gamepad2, Banknote, UserGroup } from "lucide-react";
+import { CreditCard, Gamepad2, Banknote, UserGroup,Star } from "lucide-react";
 
 import "swiper/css";
 
@@ -51,7 +51,7 @@ export const DarkPage = () => {
     <>
       <main className="main container-md">
         <Herobgdark />
-        <div className="items bg-[#080325] p-2">
+        <div className="items bg-[#100A35] p-2">
           <div className="GamesSwiper z-2 p-5">
             <Swiper
               onSwiper={(swiper) => {
@@ -81,7 +81,14 @@ export const DarkPage = () => {
             >
               {games.map((oyun) => (
                 <SwiperSlide key={oyun.id}>
-                  <img src={oyun.coverImage} className="w-full h-auto object-cover" alt="" />
+                  <div className="game__card bg-[#17103F] rounded-2xl">
+                    <img src={oyun.coverImage} className="w-full max-h-85 object-cover rounded-t-2xl" alt="" />
+                    <div className="game__card__texts p-3">
+                      <h2 className="text-white text-[20px]">{oyun.title}</h2>
+                      <span className="text-white font-bold block">{oyun.rate}/5 </span>
+                      <span className="text-white font-bold mt-3" >{oyun.price}$</span>
+                    </div>
+                  </div>
                 </SwiperSlide>
               ))}
 
@@ -153,7 +160,7 @@ export const DarkPage = () => {
             >
               {games.map((oyun) => (
                 <SwiperSlide key={oyun.id}>
-                  <img src={oyun.coverImage} className="w-full h-auto object-cover " alt="" />
+                  <img src={oyun.coverImage} className="w-full h-auto object-cover" alt="" />
                 </SwiperSlide>
               ))}
 
@@ -210,7 +217,7 @@ export const DarkPage = () => {
         <section className="partners  p-5 bg-no-repeat bg-cover bg-[url('https://wp.nkdev.info/youplay/wp-content/uploads/2015/06/banner-bg-500x375.jpg')]">
           <Sponsors />
         </section>
-        <section className="featuresSection p-5 bg-[#080325]">
+        <section className="featuresSection p-5 bg-[#100A35]">
           <h2 className="title herobgTitle text-center text-white">
             Why Buy from Us
           </h2>

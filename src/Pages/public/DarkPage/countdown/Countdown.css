@@ -1,5 +1,5 @@
 .gameCounter{
-    background-image: url("./../../../assets/image/game-bloodborne-1920x1151-1440x863.jpg")!important;
+    background-image: url("@assets/image/game-bloodborne-1920x1151-1440x863.jpg")!important;
     background-attachment: fixed;
     background-position: center;
 }

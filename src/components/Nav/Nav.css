@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 nav{
-    background-color: #080325cc;
+    background-color: #100a356a;
     height: 80px;
     position: fixed;
     width: 100%;
@@ -36,7 +36,7 @@ nav{
     color: white;
 }
 .scrolled__nav{
-    background-color: #080325;
+    background-color: #100A35;
     padding: 0px 10px;
     height: 70px;
     z-index: 1!important;
@@ -46,7 +46,7 @@ nav{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color:#080325CC;
+    background-color:#100A35;
     opacity: 1;
     transition: al 350ms ease-in    ;
     z-index: -1;

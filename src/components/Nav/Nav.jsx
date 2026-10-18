@@ -204,7 +204,7 @@ export const Nav = () => {
                 <button className="flex items-center justify-center bg-purple-800 hover:bg-purple-900 menubtns rounded-full   p-3 ">
                   <ShoppingCart color="white" size={20} />
                 </button>
-                <div className="shopItems absolute top-[100%] bg-[#08031099] right-0 flex flex-col p-3">
+                <div className="shopItems absolute top-full bg-[#08031099] right-0 flex flex-col p-3">
                 <CartItems/>
               </div>
               </div>
@@ -284,7 +284,7 @@ export const Nav = () => {
         <div
           className={
             searched
-              ? "block absolute bg-[#080325] flex justify-center items-center w-[100vw] h-[100%] overflow-hidden z-10"
+              ? "absolute bg-[#080325] flex justify-center items-center w-screen h-screen overflow-hidden z-10"
               : "hidden"
           }
         >

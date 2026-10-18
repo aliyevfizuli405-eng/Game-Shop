@@ -14,7 +14,7 @@ const imageUrl =
 
 export const Introduction = () => {
   return (
-    <section className="introduction bg-[#080325] ">
+    <section className="introduction bg-[#100A35]">
       <div className="introduction__content ">
         <QualityCards
           info={[
@@ -35,7 +35,7 @@ export const Introduction = () => {
             },
           ]}
         />
-        <h2 className="text-[20px] md:text-[30px] text-white text-center my-[48px]">Youplay Comes with 4 Demo</h2>
+        <h2 className="text-[20px] md:text-[30px] text-white text-center my-12">Youplay Comes with 4 Demo</h2>
         <div className="demos grid justify-center items-center grid-cols-12 gap-4">
           <div className="demo col-span-12 md:col-span-6  flex justify-center">
             <Link to="/dark">
