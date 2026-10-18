@@ -1,0 +1,222 @@
+// React imports
+import React, { useEffect, useRef, useState } from "react";
+
+import { Nav } from "@components/Nav/Nav";
+import { Footer } from "@components/Footer/Footer";
+import { Button2 } from "@components/Button/Button2/Button2";
+import { News } from "@components/News/News";
+import { Sponsors } from "@components/sponsors/Sponsors";
+import { QualityCards } from "@components/Cards/QualityCards/QualityCards";
+import { Countdown } from "@/Pages/public/DarkPage/countdown/Countdown";
+import { games } from "@/js/values.js";
+import { Herobgdark } from "@/Pages/public/DarkPage/herobgdark/Herobgdark";
+
+import "./DarkPage.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { CreditCard, Gamepad2, Banknote, UserGroup } from "lucide-react";
+
+import "swiper/css";
+
+export const DarkPage = () => {
+  const features = [
+    {
+      icon: <CreditCard />,
+      title: "Payment",
+      desc: "More than 10 payment systems",
+    },
+    {
+      icon: <Gamepad2 />,
+      title: "Games",
+      desc: "A large number of games",
+    },
+    {
+      icon: <Banknote />,
+      title: "Cheap",
+      desc: "Lowest prices on the Internet",
+    },
+    {
+      icon: <UserGroup />,
+      title: "Community",
+      desc: "The largest gaming community",
+    },
+  ];
+
+  // Swiper reference
+  const swiperRef = useRef(null);
+  const swiperRef2 = useRef(null);
+
+  return (
+    <>
+      <main className="main container-md">
+        <Herobgdark />
+        <div className="items bg-[#080325] p-2">
+          <div className="GamesSwiper z-2 p-5">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              slidesPerView={1}
+              spaceBetween={10}
+              breakpoints={{
+                480: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 10,
+                },
+              }}
+              className="mySwiper"
+            >
+              {games.map((oyun) => (
+                <SwiperSlide key={oyun.id}>
+                  <img src={oyun.coverImage} className="w-full h-auto object-cover" alt="" />
+                </SwiperSlide>
+              ))}
+
+              <button
+                className="previous"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "10px",
+                  zIndex: "1",
+                }}
+                onClick={() => swiperRef.current?.slidePrev()}
+              >
+                ←
+              </button>
+
+              <button
+                className="next"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  zIndex: "1",
+                }}
+                onClick={() => swiperRef.current?.slideNext()}
+              >
+                →
+              </button>
+            </Swiper>
+            <div
+              className="herobgInfo flex-wrap p-5"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <p className="text-white text-[30px] md:text-[50px]">Games</p>
+
+              <Button2 text="See more" />
+            </div>
+          </div>
+          <div className="GamesSwiper p-5">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef2.current = swiper;
+              }}
+              slidesPerView={1}
+              spaceBetween={10}
+              breakpoints={{
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 15,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              className="mySwiper"
+            >
+              {games.map((oyun) => (
+                <SwiperSlide key={oyun.id}>
+                  <img src={oyun.coverImage} className="w-full h-auto object-cover" alt="" />
+                </SwiperSlide>
+              ))}
+
+              <button
+                className="previous"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "10px",
+                  zIndex: "1",
+                }}
+                onClick={() => swiperRef2.current?.slidePrev()}
+              >
+                ←
+              </button>
+
+              <button
+                className="next"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  zIndex: "1",
+                }}
+                onClick={() => swiperRef2.current?.slideNext()}
+              >
+                →
+              </button>
+            </Swiper>
+          </div>
+          <div
+            className="herobgInfo flex-wrap p-4"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <p className="title text-white text-[30px] md:text-[50px]">
+              Discounts
+            </p>
+            <Button2 text="See more" />
+          </div>
+        </div>
+
+        <div className="gameCounter container-md p-5">
+          <Countdown />
+        </div>
+
+        <div className="news">
+          <News items={games} />
+        </div>
+
+        <section className="partners  p-5 bg-no-repeat bg-cover bg-[url('https://wp.nkdev.info/youplay/wp-content/uploads/2015/06/banner-bg-500x375.jpg')]">
+          <Sponsors />
+        </section>
+        <section className="featuresSection p-5 bg-[#080325]">
+          <h2 className="title herobgTitle text-center text-white">
+            Why Buy from Us
+          </h2>
+          <QualityCards info={features} />
+        </section>
+      </main>
+    </>
+  );
+};

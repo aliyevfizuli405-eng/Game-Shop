@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.button__default2{
+       transition: all 350ms;
+}
+
+.button__default2:hover{
+    transform: scale(1.1);
+}
+

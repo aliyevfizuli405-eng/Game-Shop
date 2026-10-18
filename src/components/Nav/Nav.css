@@ -1,0 +1,59 @@
+/* src/index.css */
+@import "tailwindcss";
+
+nav{
+    background-color: #080325cc;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    z-index: 1!important;
+}
+.navbar{
+    padding: 0px 10px;
+}
+.logo{
+    margin-right: 12px;
+}
+.nav__link{
+    color: white;
+}
+.dropdownMenu{
+   display: flex;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    top: 100%;
+    background-color:#080325CC;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    border-radius: 3px;
+}
+.dropdown:hover .dropdownMenu{
+    opacity: 1;
+}
+.dropdownLink{
+    color: white;
+}
+.scrolled__nav{
+    background-color: #080325;
+    padding: 0px 10px;
+    height: 70px;
+    z-index: 1!important;
+}
+.mobile__menu__container{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:#080325CC;
+    opacity: 1;
+    transition: all;
+    z-index: -1;
+}
+.menubtns{
+    transition: all 250ms ease-in;
+}
+
+
+
