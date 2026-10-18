@@ -26,7 +26,7 @@ nav{
     background-color:#080325CC;
     padding: 30px;
     opacity: 0;
-    transition: all 0.5s ease-in;
+    transition: all 300ms ease-in;
     border-radius: 3px;
 }
 .dropdown:hover .dropdownMenu{
@@ -48,7 +48,7 @@ nav{
     left: 0;
     background-color:#080325CC;
     opacity: 1;
-    transition: all;
+    transition: al 350ms ease-in    ;
     z-index: -1;
 }
 .menubtns{

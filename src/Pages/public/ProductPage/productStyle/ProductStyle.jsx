@@ -1,8 +1,7 @@
 import { ProductHerobg } from "../productHerobg/ProductHerobg";
 import { SwiperProduct } from "../swiperProduct/SwiperProduct";
 import { GameInfo } from "../gameinfo/GameInfo";
-import { GameContext } from "../ProductPage";
-import { useContext } from "react";
+
 
 export const ProductStyle = ({game}) => {
   return (

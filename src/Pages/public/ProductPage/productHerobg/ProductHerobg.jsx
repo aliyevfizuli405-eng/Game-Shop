@@ -1,33 +1,36 @@
+import React, { useState, useContext } from "react";
+import { Button2 } from "@components/Button/Button2/Button2";
+import { ShopCartContext } from "@/contexts/ShopCartContext";
 
-import React, { useState } from 'react';
-import { useContext } from 'react';
-import { Button2 } from "@components/Button/Button2/Button2"
-
-export const ProductHerobg = ({game}) => {
+export const ProductHerobg = ({ game }) => {
   const [inputFizuli, setInputFizuli] = useState(false);
+  const {shopCartItems}=useContext(ShopCartContext)
+  const {setShopCartItems}=useContext(ShopCartContext)
   return (
     <div
       className="container-md h-[70vh] p-10 flex flex-col justify-center items-center md:items-start bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url("${game.bgImage}")`,padding:"40px" }}
+      style={{ backgroundImage: `url("${game.bgImage}")`, padding: "40px" }}
     >
-      <p className="text-[50px] font-medium text-white">
-        {game.title}
-      </p>
+      <p className="text-[50px] font-medium text-white">{game.title}</p>
 
-      <p className="text-[22.5px] text-white">
-        $ {game.price}
-      </p>
+      <p className="text-[22.5px] text-white">$ {game.price}</p>
 
       <div className="flex flex-col md:flex-row gap-5">
-        <Button2 text="Add to cart" />
-        <input placeholder='1'
+        <span
+          onClick={() => {setShopCartItems((shopCartItems) => [...shopCartItems, game]);console.log(shopCartItems)}}
+        >
+          <Button2 text="Add to cart" />
+        </span>
+
+        <input
+          placeholder="1"
           type="number"
-          className={`text-white p-0.5 bg-[#ffffff40] -skew-x-10 ${
+          className={`text-white p-1 bg-[#ffffff40] rounded-xs ${
             inputFizuli ? "scale-[0.9]" : ""
           }`}
           onClick={() => setInputFizuli(true)}
         />
       </div>
     </div>
-  )
-}
+  );
+};

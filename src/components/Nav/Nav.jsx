@@ -1,19 +1,24 @@
-import { useState, useEffect } from "react";
-import { createContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router";
 import logo from "@/assets/image/logo-light.png";
 import "./Nav.css";
 import { Search } from "../Search/Search";
+import { SearchContext } from "@/contexts/SearchContext";
 
 // Lucide Icons
-import { MenuIcon, X,ShoppingCart} from "lucide-react";
-
-export const SearchContext = createContext();
+import { MenuIcon, X, ShoppingCart } from "lucide-react";
+import { ShopCartContext } from "@/contexts/ShopCartContext";
+import { CartItems } from "../CartItems/CartItems";
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
-  const [searched, setSearched] = useState(false);
+  const [shopCart, setShopCart] = useState([]);
+
+  const { searched } = useContext(SearchContext);
+  const { setSearched } = useContext(SearchContext);
+
+  const { shopCartItems } = useContext(ShopCartContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +38,9 @@ export const Nav = () => {
     return (
       <>
         <nav
-          className={scrolled ? "scrolled__nav p-5 flex z-100 " : "nav p-5 z-100"}
+          className={
+            scrolled ? "scrolled__nav p-5 flex z-100 " : "nav p-5 z-100"
+          }
         >
           <div className="navbar flex justify-between items-center gap-2 p-3 container-md">
             <div className="navbar__left flex gap-3 justify-center items-center">
@@ -167,8 +174,8 @@ export const Nav = () => {
 
               <div className="dropdown">
                 <button className="bg-purple-800 hover:bg-purple-900 menubtns rounded-full p-2">
-                    <i className="bi bi-person-fill text-white"></i>
-                    <i className="ri-arrow-drop-down-fill text-white"></i>
+                  <i className="bi bi-person-fill text-white"></i>
+                  <i className="ri-arrow-drop-down-fill text-white"></i>
                 </button>
                 <div className="dropdownMenu flex-col">
                   <a className="dropdownLink" href="">
@@ -192,12 +199,16 @@ export const Nav = () => {
                   <i className="bx bx-search text-white"></i>
                 </button>
               </div>
-              
-              <div className="">
+
+              <div className="flex relative flex-col">
                 <button className="flex items-center justify-center bg-purple-800 hover:bg-purple-900 menubtns rounded-full   p-3 ">
-                  <ShoppingCart color="white" size={20}/>
+                  <ShoppingCart color="white" size={20} />
                 </button>
+                <div className="shopItems absolute top-[100%] bg-[#08031099] right-0 flex flex-col p-3">
+                <CartItems/>
               </div>
+              </div>
+              
             </div>
 
             {/* MOBILE */}
@@ -287,9 +298,7 @@ export const Nav = () => {
   } else {
     return (
       <>
-        <SearchContext.Provider value={{ searched, setSearched }}>
-          <Search searched={{ searched, setSearched }} />
-        </SearchContext.Provider>
+        <Search />
       </>
     );
   }

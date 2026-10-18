@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
 import { Link } from "react-router";
 import { games } from "@/js/values";
-import { GameContext } from "../ProductPage";
 
 // Lucide
 import { HardDrive,Cpu,Gpu} from "lucide-react";

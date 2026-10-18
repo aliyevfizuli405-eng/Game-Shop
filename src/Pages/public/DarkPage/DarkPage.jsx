@@ -153,7 +153,7 @@ export const DarkPage = () => {
             >
               {games.map((oyun) => (
                 <SwiperSlide key={oyun.id}>
-                  <img src={oyun.coverImage} className="w-full h-auto object-cover" alt="" />
+                  <img src={oyun.coverImage} className="w-full h-auto object-cover " alt="" />
                 </SwiperSlide>
               ))}
 

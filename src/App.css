@@ -1,2 +1,9 @@
 @import "tailwindcss";
+.bagla{
+    transform: rotate(90deg);
+}
+.bagla:hover{
+    transform: rotate(0deg);
+    transition: all 200ms ease-in;
 
+}

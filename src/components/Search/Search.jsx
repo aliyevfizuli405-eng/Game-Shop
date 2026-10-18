@@ -1,8 +1,10 @@
 import React from "react";
 import { X, Car, Search as Salam } from "lucide-react";
 import { useContext, useState } from "react";
-import { SearchContext } from "../Nav/Nav";
 import { Nav } from "../Nav/Nav";
+import { Link } from "react-router";
+
+import { SearchContext } from "@/contexts/SearchContext";
 
 export const games = [
   {
@@ -206,39 +208,38 @@ export const games = [
 ];
 
 export const Search = () => {
-  const [searched, setSearched] = useState(useContext(SearchContext));
+  const {searched} =useContext(SearchContext)
+  const {setSearched} =useContext(SearchContext)
   const [searchedText,setSearchedText] = useState("");
 
   const filteredGames=games.filter(game=>game.title.toLowerCase().includes(searchedText.toLowerCase().trim()))
 
-  if (searched) {
+  
     return (
       <div className="w-screen h-screen z-50 flex justify-center items-center fixed bg-[#08032599] inset-0  transition delay-300 duration-1000 ease-in">
         <input
           type="text"
-          className="bg-white w-[80%] h-[15] p-5"
+          className="bg-white w-[80%] border-4 border-purple-700 h-[15] p-5"
           placeholder="Site Search"
           value={searchedText}
           onChange={(e)=>setSearchedText(e.target.value)}
         />
+        <Link to={`/product`}>
         <button
           className="p-5 ml-2 bg-purple-800 rounded-xl text-white"
-          onClick={() => {console.log(filteredGames[0].id)}}
+          onClick={() => {setSearched(!searched)}}
         >
           <Salam />
         </button>
+        </Link>
         <button
-          className="absolute top-10 left-[90%]"
+          className="absolute top-10 left-[90%] bagla hover:zoom-120"
           onClick={() => {
             setSearched(!searched);
           }}
         >
-          <X color="white" size={50} />
+          <X color="white" size={50}/>
         </button>
       </div>
-
     );
-  } else {
-    return <Nav />;
-  }
 };
