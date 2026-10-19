@@ -6,7 +6,8 @@ nav{
     height: 80px;
     position: fixed;
     width: 100%;
-    z-index: 1!important;
+    z-index: 9999!important;
+    isolation: isolate;
 }
 .navbar{
     padding: 0px 10px;
@@ -39,7 +40,7 @@ nav{
     background-color: #100A35;
     padding: 0px 10px;
     height: 70px;
-    z-index: 1!important;
+    z-index: 9999!important;
 }
 .mobile__menu__container{
     width: 100%;

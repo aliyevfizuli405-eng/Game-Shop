@@ -45,7 +45,7 @@ export const Nav = () => {
       <>
         <nav
           className={
-            scrolled ? "scrolled__nav p-5 flex z-100 " : "nav p-5 z-100"
+            scrolled ? "scrolled__nav p-5 flex z-[9999] " : "nav p-5 z-[9999]"
           }
         >
           <div className="navbar flex justify-between items-center gap-2 p-3 container-md">

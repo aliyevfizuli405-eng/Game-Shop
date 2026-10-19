@@ -5,5 +5,8 @@
 .bagla:hover{
     transform: rotate(0deg);
     transition: all 200ms ease-in;
+}
 
+.swiper,.swiper-wrapper,.swiper-slide{
+    z-index: 1!important;
 }
