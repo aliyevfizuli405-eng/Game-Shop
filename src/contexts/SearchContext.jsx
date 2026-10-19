@@ -4,6 +4,7 @@ export const SearchContext = createContext();
 
 export const SearchProvider=({children})=>{
     const [searched, setSearched] = useState(false);
-    return(<SearchContext.Provider value={{searched,setSearched}}>{children}</SearchContext.Provider>)
+    const [searchedText,setSearchedText] = useState("");  
+    return(<SearchContext.Provider value={{searched,setSearched,searchedText,setSearchedText}}>{children}</SearchContext.Provider>)
 }
 
