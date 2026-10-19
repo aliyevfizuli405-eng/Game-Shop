@@ -58,5 +58,8 @@ nav{
     transition: all 250ms ease-in;
 }
 
-
+.shop__items:hover .shopItems{
+    display: flex;
+    flex-direction: column;
+}
 

@@ -17,7 +17,20 @@ export const ProductHerobg = ({ game }) => {
 
       <div className="flex flex-col md:flex-row gap-5">
         <span
-          onClick={() => {setShopCartItems((shopCartItems) => [...shopCartItems, game]);console.log(shopCartItems)}}
+          onClick={() => {
+            game.count++;
+            console.log(game.count); 
+            if(game.count==1)
+              { 
+            setShopCartItems((shopCartItems) => [...shopCartItems, game])
+            game.totalPrice=game.price
+            }
+          else if(game.count>1){
+            game.totalPrice=game.price*game.count;}
+            console.log(Math.floor(game.totalPrice));
+          }
+        }
+          
         >
           <Button2 text="Add to cart" />
         </span>

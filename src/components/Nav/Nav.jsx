@@ -164,12 +164,11 @@ export const Nav = () => {
                 </button>
               </div>
 
-              <div className="flex relative flex-col">
+              <div className="flex relative flex-col shop__items">
                 <button className="flex items-center justify-center bg-purple-800 hover:bg-purple-900 menubtns rounded-full p-3">
                   <ShoppingCart color="white" size={20} />
                 </button>
-
-                <div className="shopItems absolute top-full bg-[#08031099] right-0 flex flex-col p-3">
+                <div className="shopItems hidden absolute top-full bg-[#08031099] right-0  p-3">
                   <CartItems />
                 </div>
               </div>
