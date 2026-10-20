@@ -7,7 +7,7 @@ import { HardDrive,Cpu,Gpu} from "lucide-react";
 export const GameInfo = ({game}) => {
  
   return (
-    <div className="game__inf p-4">
+    <div className="game__inf p-4 bg-[#100a35]">
       <div className="grid grid-cols-12 gap-3">
         <div className="col-span-12 md:col-span-8">
           <p className="text-white text-4xl mb-8">DESCRIPTION</p>

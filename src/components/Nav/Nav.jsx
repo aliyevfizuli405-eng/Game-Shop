@@ -89,26 +89,7 @@ export const Nav = () => {
               </div>
 
               {/* BLOG */}
-              <div className="dropdown hidden md:block">
-                <a href="" className="nav__link">
-                  BLOG<i className="ri-arrow-drop-down-fill"></i>
-                  <br />
-                  <span>news</span>
-                </a>
-
-                <div className="dropdownMenu bg-[#1E174A] flex justify-center gap-5 items-center">
-                  <div className="flex flex-col">
-                    <a className="dropdownLink" href="">Post Style 1</a>
-                    <a className="dropdownLink" href="">Post Style 2</a>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <a className="dropdownLink" href="">Blog Style 1</a>
-                    <a className="dropdownLink" href="">Blog Style 2</a>
-                    <a className="dropdownLink" href="">Blog Style 3</a>
-                  </div>
-                </div>
-              </div>
+              
 
               {/* FEATURES */}
               <div className="dropdown hidden md:block">

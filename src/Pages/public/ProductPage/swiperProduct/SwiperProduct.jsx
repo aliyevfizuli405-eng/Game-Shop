@@ -10,7 +10,7 @@ import { Search } from "lucide-react";
 
 export const SwiperProduct = () => {
   return (
-    <div className="container-md p-6">
+    <div className="container-md bg-[#100a35] p-6">
       <Swiper
         spaceBetween={10}
         pagination={{
